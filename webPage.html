@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #1e272e; /* Dunkles Blaugrau */
+            color: #ecf0f1; /* Weiß */
+        }
+
+        header {
+            text-align: center;
+            padding: 10px;
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Füge Stil für die arabische Schrift hinzu */
+        body[lang="ar"] {
+            direction: rtl;
+        }
+
+        /* Füge Stil für das Bild hinzu */
+        section img {
+            height: 500px;
+            transition: transform 0.3s ease-in-out; /* Übergangseffekt für die Bewegung */
+            display: block; /* Damit das Bild nicht von Text beeinflusst wird */
+            margin: auto; /* Zentriere das Bild horizontal */
+        }
+
+        /* Füge Animation hinzu, wenn die Maus über das Bild geht */
+        section img:hover {
+            transform: scale(1.1); /* Vergrößere das Bild um 10% */
+        }
+
+        /* Füge Stil für das Dropdown-Menü hinzu */
+        #languageSelect {
+            color: #2c3e50; /* Dunkelgrau */
+            background-color: #ecf0f1; /* Weiß */
+            padding: 5px;
+            border: 1px solid #bdc3c7; /* Hellgrau */
+        }
+
+        #languageSelect  {
+            background-color: #25282b; /* Blau */
+            color: #ecf0f1; /* Weiß */
+        }
+
+        /* Füge Stil für mehr Informationen hinzu */
+        #more_information_section {
+            background-color: transparent; /* Transparent */
+            color: transparent; /* Transparent */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .grid_container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .grid_item {
+            text-align: center;
+            transition: transform 0.3s ease-in-out; /* Übergangseffekt für die Bewegung */
+        }
+
+        .grid_item:hover {
+            transform: scale(1.4); /* Vergrößere das Element um 10% */
+        }
+
+        .grid_item img {
+            height: 100px; /* Ändere die Höhe nach Bedarf */
+            transition: height 0.3s ease-in-out; /* Übergangseffekt für die Höhe */
+        }
+
+        .grid_item:hover img {
+            height: 180px; /* Ändere die Höhe nach Bedarf */
+        }
+
+        /* Ändere die Farben des Textes in den Grid-Elementen */
+        .grid_item h3 {
+            color: #ecf0f1; /* Weiß */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="title">Willkommen auf meiner Webseite!</h1>
+    </header>
+
+    <section>
+        <h1 id="Interessen">Geprüfter Bilanzbuchhalter (IHK)</h1>
+        <p id="aboutText">Bisher Sabsabi</p>
+    </section>
+
+    <section>
+        <img src="C:\Users\basse\OneDrive\Desktop\Bisher\Bisher_page.png" alt="Bilanzbuchhalter Beshr Sabsabi">
+    </section>
+
+    <section>
+        <h2>Arbeitsbereiche</h2>
+        <ul>
+            <li>Buchhaltung</li>
+            <li>Beratung</li>
+            <li>Steuererklärung</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Mehr Informationen finden Sie unter:</h3>
+    </section>
+
+    <footer id="more_information_section">
+        <div class="grid_container">
+            <div id="item1" class="grid_item">
+                <a href="https://www.instagram.com/bilanzbuchhalter_beshr/" target="_blank">
+                    <img src="C:\Users\basse\OneDrive\Desktop\Bisher\instagram.png" alt="Instagram Icon">
+                </a>
+                <h3>Instagram</h3>
+            </div>
+            <div id="item2" class="grid_item">
+                <a href="https://wa.me/+491784185155"  target="_blank">
+                    <img src="C:\Users\basse\OneDrive\Desktop\Bisher\whatsapp.png" alt="WhatsApp Icon">
+                </a>
+                <h3>WhatsApp</h3>
+            </div>
+            <div id="item3" class="grid_item">
+                <a href="https://t.me/Adel_SHM" target="_blank">
+                    <img src="C:\Users\basse\OneDrive\Desktop\Bisher\telegramm.png" alt="Telegram Icon">
+                </a>
+                <h3>Telegram</h3>
+            </div>
+        </div>
+    </footer>
+
+    <footer>
+        <p id="copyright">&copy; 2024 Meine Webseite. Alle Rechte vorbehalten.</p>
+        <p>
+            Sprache auswählen:
+            <select id="languageSelect" onchange="changeLanguage()" >
+                <option value="de">Deutsch</option>
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </p>
+    </footer>
+
+    <script>
+        function changeLanguage() {
+            var selectedLanguage = document.getElementById("languageSelect").value;
+
+            // Hier könntest du für jede Sprache den entsprechenden Text setzen
+            if (selectedLanguage === "de") {
+                document.getElementById("title").innerText = "Willkommen auf meiner Webseite!";
+                document.getElementById("aboutText").innerText = "Hier kannst du etwas über mich erfahren.";
+                document.getElementById("copyright").innerText = "\u00A9 2024 Meine Webseite. Alle Rechte vorbehalten.";
+            } else if (selectedLanguage === "en") {
+                document.getElementById("title").innerText = "Welcome to my website!";
+                document.getElementById("aboutText").innerText = "Here you can learn something about me.";
+                document.getElementById("copyright").innerText = "\u00A9 2024 My Website. All rights reserved.";
+            } else if (selectedLanguage === "ar") {
+                document.getElementById("title").innerText = "مرحبًا بك في موقعي!";
+                document.getElementById("aboutText").innerText = "هنا يمكنك معرفة بعض المعلومات عني.";
+                document.getElementById("copyright").innerText = "\u00A9 2024 موقعي. كل الحقوق محفوظة.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
